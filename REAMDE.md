@@ -13,6 +13,5 @@ javac *.java
 java CrowdStreet
 ```
 
-This was more because I don't frequently use java, and I didn't feel like
+This was mostly because I don't frequently use java, and I didn't feel like
 spending time setting up tools.
-
