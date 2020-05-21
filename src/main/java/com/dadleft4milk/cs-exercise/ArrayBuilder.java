@@ -1,8 +1,10 @@
-import java.util.*;
+package com.dadleft4milk.csExercise;
 
-class ArrayBuilder {
+import java.util.ArrayList;
+
+public class ArrayBuilder {
   /* This class helps to create arrays containing sequences of repeated values. */
-  private ArrayList<Entry> entries;
+  private final ArrayList<Entry> entries;
   private int total;
 
   public ArrayBuilder() {
@@ -11,13 +13,14 @@ class ArrayBuilder {
   }
 
   /* Add count instences of value */
-  public void add(int count, int value) {
+  public ArrayBuilder  add(final int count, final int value) {
     entries.add(new Entry(count, value));
     total += count;
+    return this;
   }
 
   /* Generate an array based on added entries. */
-  int [] build() {
+  public int [] build() {
     int[] arr = new int[total];
     int index = 0;
     for(Entry e: entries) {
@@ -29,7 +32,7 @@ class ArrayBuilder {
   }
 
   /* helper to add count instances of value to arr at start index */
-  private static void insertValues(int[] arr, int start, int count, int value) {
+  private static void insertValues(final int[] arr, final int start, final int count, final int value) {
     for(int i = start; i < start + count; ++i) {
       arr[i] = value;
     }
@@ -37,10 +40,10 @@ class ArrayBuilder {
 
   /* Class to hold repeated entries */
   private class Entry {
-    private int count;
-    private int value;
+    private final int count;
+    private final int value;
 
-    public Entry(int count, int value) {
+    public Entry(final int count, final int value) {
       this.count = count;
       this.value = value;
     }
