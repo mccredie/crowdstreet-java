@@ -1,18 +1,18 @@
 package com.dadleft4milk.csExercise;
 
-import java.io.IOException;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import java.util.Random;
-
-import java.lang.SuppressWarnings;
-
 
 /**
  * Application that produces a scrambled collection of values.
  */
 public final class App {
+
+  /** Line numbers with this value will be printed to stdout. */
+  private static final int PRINT_LINES_VALUE = 20;
 
   private App() { }
 
@@ -22,7 +22,7 @@ public final class App {
    * @param args Command line arguments
    */
 
-  @SuppressWarnings("stylechecker:magicnumber")
+  @SuppressWarnings("magicnumber")
   public static void main(final String[] args) {
     final ArrayBuilder builder = new ArrayBuilder();
 
@@ -94,7 +94,7 @@ public final class App {
     ) {
 
       for (int i = 0; i < arr.length; ++i) {
-        if (arr[i] == 20) {
+        if (arr[i] == PRINT_LINES_VALUE) {
           System.out.printf("%d\n", i + 1);
         }
         printer.printf("%d\n", arr[i]);
